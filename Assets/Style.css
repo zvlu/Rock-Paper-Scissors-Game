@@ -19,9 +19,7 @@ header > h1 {
     font-family: sans-serif;
 
 }
-#action-message {
-    text-align: center;
-}
+
 
 .score-board {
     margin: 20px auto;
@@ -73,7 +71,7 @@ img {
     width: 90px;
 }
 .choices {
-    margin: 50px 0;
+    margin-top: 50px;
     text-align: center;
 
 }
@@ -83,10 +81,25 @@ img {
     padding: 10px;
     margin: 0px 20px;
     display: inline-block;
+    transition: all 0.3s ease;
 
 }
 
+.choice:hover {
+    cursor: pointer;
+    background: #40e2da;
 
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
 
 
 
