@@ -25,15 +25,48 @@ const scissors_div = document.getElementById("s");
 
 function getCompChoice () {
     const choices = ["r", "p" , "s"];
-    console.log(Math.random()* 3);
+    // Randomizer
+    const randomNumber = Math.floor(Math.random()*3);
+    // return with random choice array
+    return choices[randomNumber];
+    
 }
 
-getCompChoice();
+
 
 function game (userChoice) {
+    const computerChoice = getCompChoice();
+    // console.log(computerChoice);
+    // console.log(userChoice);
+    // Game Logic
+    if (userChoice === "r" || userChoice === "s" || userChoice === "p") {
     
+        if ((userChoice === "r" && getCompChoice === "p") ||
+        (userChoice === "s" && getCompChoice === "r") ||
+        (userChoice === "p" && getCompChoice === "s")) {
+        userScore_span.innerHTML = userScore;
+        userScore ++;
+        } else if (userChoice === getCompChoice){
+            userScore_span.innerHTML = userScore;
+            computerScore_span = computerScore;
+            userScore ++;
+            computerScore ++;
+
+        } else {
+            userScore_span.innerHTML = userScore;
+            computerScore_span = computerScore;
+            computerScore ++;
+
+            
+        }
+    }
 
 }
+    
+
+
+
+
 // Event Listeners for selections
 function main () { 
     rock_div.addEventListener("click", function(){
