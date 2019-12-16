@@ -31,38 +31,33 @@ function getCompChoice () {
     return choices[randomNumber];
     
 }
-
-
+var wins = userScore +1;
+var tie = userScore + computerScore +1;
+var loss = computerScore +1;
+var computerGuess = getCompChoice(); 
 
 function game (userChoice) {
     const computerChoice = getCompChoice();
-    // console.log(computerChoice);
-    // console.log(userChoice);
-    // Game Logic
-    if (userChoice === "r" || userChoice === "s" || userChoice === "p") {
-    
-        if ((userChoice === "r" && getCompChoice === "p") ||
-        (userChoice === "s" && getCompChoice === "r") ||
-        (userChoice === "p" && getCompChoice === "s")) {
-        userScore_span.innerHTML = userScore;
-        userScore ++;
-        } else if (userChoice === getCompChoice){
-            userScore_span.innerHTML = userScore;
-            computerScore_span = computerScore;
-            userScore ++;
-            computerScore ++;
-
+    // console.log("comp ===>" + computerChoice);
+    // console.log("userchoice =====>" + userChoice);
+    if (userChoice === "r" || userChoice === "p" || userChoice === "s") {
+        // Win/lose conditions:
+        if  ((userChoice === "r" && computerGuess === "s") ||
+        (userChoice === "s" && computerGuess === "p") || 
+        (userChoice === "p" && computerGuess === "r")){
+            console.log("User Wins");
+            wins ++;
+        } else if (userChoice === computerChoice) {
+            console.log("Tie");
+            tie ++;
         } else {
-            userScore_span.innerHTML = userScore;
-            computerScore_span = computerScore;
-            computerScore ++;
+            console.log("Loss");
+            loss++;
 
-            
         }
     }
 
 }
-    
 
 
 

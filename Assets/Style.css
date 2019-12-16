@@ -19,6 +19,13 @@ header > h1 {
     font-family: sans-serif;
 
 }
+header > h2 {
+    color: #40e2da;
+    text-align: center;
+    font-family: sans-serif;
+
+}
+
 
 
 .score-board {
